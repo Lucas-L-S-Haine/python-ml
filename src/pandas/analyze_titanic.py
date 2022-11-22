@@ -10,3 +10,6 @@ titanic.to_excel("titanic.xlsx", sheet_name="passengers", index=False)
 
 # Read data types
 print(titanic.dtypes)
+
+# Print data summary
+titanic.info()
