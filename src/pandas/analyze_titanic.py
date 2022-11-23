@@ -13,3 +13,8 @@ print(titanic.dtypes)
 
 # Print data summary
 titanic.info()
+
+# Take a particular series from the data frame.
+# Column names available on titanic.columns
+ages = titanic["Age"]
+print(ages)
