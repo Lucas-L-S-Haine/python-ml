@@ -26,3 +26,7 @@ print(titanic["Age"].shape)
 # Select a subset of columns within the data frame
 age_sex = titanic[["Age", "Sex"]]
 print(age_sex.head())
+
+# Select a subset of rows within the data frame
+above_35 = titanic[titanic["Age"] > 35]
+print(above_35)
