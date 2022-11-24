@@ -18,3 +18,7 @@ titanic.info()
 # Column names available on titanic.columns
 ages = titanic["Age"]
 print(ages)
+
+# Panda’s equivalent for R’s dim
+print(titanic.shape)
+print(titanic["Age"].shape)
