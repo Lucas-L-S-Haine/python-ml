@@ -22,3 +22,7 @@ print(ages)
 # Panda’s equivalent for R’s dim
 print(titanic.shape)
 print(titanic["Age"].shape)
+
+# Select a subset of columns within the data frame
+age_sex = titanic[["Age", "Sex"]]
+print(age_sex.head())
