@@ -1,4 +1,4 @@
-from load_titanic import titanic
+from load_data import titanic
 
 # Read the first 8 entries
 print(titanic.head(8))
