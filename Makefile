@@ -1,17 +1,19 @@
 USER_SHELL = /bin/bash
+VENV = .venv
+USER_VIRTUAL_ENVIRONMENT = $(CURDIR)/$(VENV)
 
-activate: | .venv
+activate: | $(USER_VIRTUAL_ENVIRONMENT)
 	if test -z "$${VIRTUAL_ENV}"; then \
-		. .venv/bin/activate && $(USER_SHELL); \
+		. $(USER_VIRTUAL_ENVIRONMENT)/bin/activate && $(USER_SHELL); \
 	fi
 
-install: .venv
+install: $(USER_VIRTUAL_ENVIRONMENT)
 
-.venv: requirements.txt
-	if test ! -d .venv; then \
-		python -m venv .venv; \
+$(USER_VIRTUAL_ENVIRONMENT): requirements.txt
+	if test ! -d $(USER_VIRTUAL_ENVIRONMENT); then \
+		python -m venv $(USER_VIRTUAL_ENVIRONMENT);  \
 	fi
-	. .venv/bin/activate && pip install -r requirements.txt
-	touch .venv
+	. $(USER_VIRTUAL_ENVIRONMENT)/bin/activate && pip install -r requirements.txt
+	touch $(USER_VIRTUAL_ENVIRONMENT)
 
 .PHONY: install activate
