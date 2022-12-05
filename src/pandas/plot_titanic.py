@@ -12,3 +12,7 @@ plt.show()
 # Plot a single series out of the data frame
 air_quality["station_paris"].plot()
 plt.show()
+
+# Create a scatter plot to compare London and Paris
+air_quality.plot.scatter(x="station_london", y="station_paris", alpha=0.5)
+plt.show()
