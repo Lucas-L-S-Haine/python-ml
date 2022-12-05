@@ -16,3 +16,7 @@ plt.show()
 # Create a scatter plot to compare London and Paris
 air_quality.plot.scatter(x="station_london", y="station_paris", alpha=0.5)
 plt.show()
+
+# Create a boxplot for each available series
+air_quality.plot.box()
+plt.show()
