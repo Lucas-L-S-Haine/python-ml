@@ -20,3 +20,7 @@ plt.show()
 # Create a boxplot for each available series
 air_quality.plot.box()
 plt.show()
+
+# Plot each series separately
+axs = air_quality.plot.area(figsize=(12, 4), subplots=True)
+plt.show()
