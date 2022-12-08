@@ -1,3 +1,5 @@
+import os
+
 from load_data import air_quality
 import matplotlib.pyplot as plt
 
@@ -23,8 +25,10 @@ axs = air_quality.plot.area(figsize=(12, 4), subplots=True)
 plt.show()
 
 # Extend, customize and save plot
+if not os.path.exists("output"):
+    os.mkdir("output")
 fig, axs = plt.subplots(figsize=(12, 4))
 air_quality.plot.area(ax=axs)
 axs.set_ylabel("NO$_2$ concentration")
-fig.savefig("no2_concentration.png")
+fig.savefig("output/no2_concentration.png")
 plt.show()
