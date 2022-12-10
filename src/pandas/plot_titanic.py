@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 import os
 
 from load_data import air_quality
