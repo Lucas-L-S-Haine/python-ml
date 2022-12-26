@@ -11,7 +11,7 @@ install: $(USER_VIRTUAL_ENVIRONMENT)
 
 $(USER_VIRTUAL_ENVIRONMENT): requirements.txt
 	if test ! -d $(USER_VIRTUAL_ENVIRONMENT); then \
-		python -m venv $(USER_VIRTUAL_ENVIRONMENT);  \
+		python -m venv $(USER_VIRTUAL_ENVIRONMENT); \
 	fi
 	. $(USER_VIRTUAL_ENVIRONMENT)/bin/activate && pip install -r requirements.txt
 	touch $(USER_VIRTUAL_ENVIRONMENT)
