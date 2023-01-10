@@ -16,3 +16,13 @@ air_quality["ratio_paris_antwerp"] = (
     air_quality["station_paris"] / air_quality["station_antwerp"]
 )
 print(air_quality.head())
+
+# Create a new data frame with renamed series
+air_quality_renamed = air_quality.rename(
+    columns={
+        "station_antwerp": "BETR801",
+        "station_paris": "FR4014",
+        "station_london": "London Westminster"
+    }
+)
+print(air_quality_renamed.head())
