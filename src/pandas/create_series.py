@@ -11,6 +11,7 @@ air_quality["london_mg_per_cubic"] = air_quality["station_london"] * 1.882
 # Print resulting data frame. This one now has 4 series
 print(air_quality.head())
 
+# Create a ratio series from station_paris and station_antwerp
 air_quality["ratio_paris_antwerp"] = (
     air_quality["station_paris"] / air_quality["station_antwerp"]
 )
