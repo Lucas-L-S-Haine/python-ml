@@ -26,3 +26,7 @@ air_quality_renamed = air_quality.rename(
     }
 )
 print(air_quality_renamed.head())
+
+# Use mapping function to rename series
+air_quality_renamed = air_quality_renamed.rename(columns=str.lower)
+print(air_quality_renamed.head())
