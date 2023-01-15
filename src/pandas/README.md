@@ -13,3 +13,5 @@ panda’s official tutorial:
   - filter_data.py
 3. How do I create plots in pandas?
   - plot_air_quality.py
+4. How do I create new columns derived from existing columns?
+  - create_series.py
