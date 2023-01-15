@@ -15,3 +15,8 @@ panda’s official tutorial:
   - plot_air_quality.py
 4. How to create new columns derived from existing columns?
   - create_series.py
+5. How to calculate summary statistics?
+6. How to reshape the layout of tables?
+7. How to combine data from multiple tables?
+8. How to handle time series data with ease?
+9. How to manipulate textual data?
