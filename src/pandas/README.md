@@ -4,4 +4,12 @@ run the following command:
 python -i load_titanic.py
 ```
 
-The scripted analysis goes into the file `analyze_titanic.py`.
+panda’s official tutorial:
+
+1. How do I read and write tabular data?
+  - analyze_titanic.py
+2. How do I select a subset of a `DataFrame`?
+  - analyze_titanic.py
+  - filter_data.py
+3. How do I create plots in pandas?
+  - plot_air_quality.py
