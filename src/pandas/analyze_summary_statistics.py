@@ -7,3 +7,6 @@ print(titanic["Age"].mean(), end="\n\n")
 
 # Calculate the median of two series
 print(titanic[["Age", "Fare"]].median(), end="\n\n")
+
+# Summarize the "Age" and "Fare" series
+print(titanic[["Age", "Fare"]].describe(), end="\n\n")
