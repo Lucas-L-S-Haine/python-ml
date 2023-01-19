@@ -16,6 +16,7 @@ panda’s official tutorial:
 4. How to create new columns derived from existing columns?
   - create_series.py
 5. How to calculate summary statistics?
+  - analyze_summary_statistics.py
 6. How to reshape the layout of tables?
 7. How to combine data from multiple tables?
 8. How to handle time series data with ease?
