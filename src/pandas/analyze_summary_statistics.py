@@ -15,3 +15,7 @@ print(titanic[["Age", "Fare"]].describe(), end="\n\n")
 print(titanic.agg({"Age": ["min", "max", "median", "skew"],
                    "Fare": ["min", "max", "median", "mean"]}),
       end="\n\n")
+
+# Group aggregating statistics by category
+print(titanic[["Sex", "Age"]].groupby("Sex").mean(),
+      end="\n\n")
