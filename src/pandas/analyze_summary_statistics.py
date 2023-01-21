@@ -23,3 +23,7 @@ print(titanic[["Sex", "Age"]].groupby("Sex").mean(),
 # Take the mean of all numeric columns
 print(titanic.groupby("Sex").mean(numeric_only=True),
       end="\n\n")
+
+# Take a series out of grouped data and calculate the mean
+print(titanic.groupby("Sex")["Age"].mean(),
+      end="\n\n")
