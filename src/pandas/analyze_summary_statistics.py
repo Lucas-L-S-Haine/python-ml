@@ -19,3 +19,7 @@ print(titanic.agg({"Age": ["min", "max", "median", "skew"],
 # Group aggregating statistics by category
 print(titanic[["Sex", "Age"]].groupby("Sex").mean(),
       end="\n\n")
+
+# Take the mean of all numeric columns
+print(titanic.groupby("Sex").mean(numeric_only=True),
+      end="\n\n")
