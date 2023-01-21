@@ -10,3 +10,8 @@ print(titanic[["Age", "Fare"]].median(), end="\n\n")
 
 # Summarize the "Age" and "Fare" series
 print(titanic[["Age", "Fare"]].describe(), end="\n\n")
+
+# Use aggregating statistics
+print(titanic.agg({"Age": ["min", "max", "median", "skew"],
+                   "Fare": ["min", "max", "median", "mean"]}),
+      end="\n\n")
