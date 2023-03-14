@@ -1,5 +1,6 @@
-MAKE_PID := $(shell ps -o ppid= -p $(shell ps -o ppid= -p $$$$))
-SHELL := $(shell ps -o comm= -p $(MAKE_PID))
+SHELL := $(shell echo $(SHELL) | python -c "import subprocess as sp; \
+	shell = sp.check_output(['ps', '-o', 'comm=']).decode('utf-8').split(); \
+	print(shell[0] if shell[2] == 'sh' else shell[2])")
 
 VENV = $(CURDIR)/.venv
 
