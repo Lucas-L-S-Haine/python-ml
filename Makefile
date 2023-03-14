@@ -9,10 +9,10 @@ PIP = $(PYTHON) -m pip
 
 ifeq ($(SHELL), fish)
 	ACTIVATE = source $(VENV)/bin/activate.fish
-	ACTIVATE_VENV = if test -z $$VIRTUAL_ENV; $(ACTIVATE) && $(SHELL); end
+	ACTIVATE_VENV = if test -z $$VIRTUAL_ENV; $(ACTIVATE) && $(SHELL) $(SHELL_FLAGS); end
 else
 	ACTIVATE = . $(VENV)/bin/activate
-	ACTIVATE_VENV = if [ -z $${VIRTUAL_ENV} ]; then $(ACTIVATE) && $(SHELL); fi
+	ACTIVATE_VENV = if [ -z $${VIRTUAL_ENV} ]; then $(ACTIVATE) && $(SHELL) $(SHELL_FLAGS); fi
 endif
 
 activate: | $(VENV)
