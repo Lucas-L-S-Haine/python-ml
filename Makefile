@@ -1,22 +1,26 @@
-USER_SHELL = /bin/bash
-VENV = .venv
-USER_VIRTUAL_ENVIRONMENT = $(CURDIR)/$(VENV)
+VENV = $(CURDIR)/.venv
 
 PYTHON = python
 PIP = $(PYTHON) -m pip
 
-activate: | $(USER_VIRTUAL_ENVIRONMENT)
-	if test -z "$${VIRTUAL_ENV}"; then \
-		. $(USER_VIRTUAL_ENVIRONMENT)/bin/activate && $(USER_SHELL); \
-	fi
+ifeq ($(SHELL), fish)
+	ACTIVATE = source $(VENV)/bin/activate.fish
+	ACTIVATE_VENV = if test -z $$VIRTUAL_ENV; $(ACTIVATE) && $(SHELL); end
+else
+	ACTIVATE = . $(VENV)/bin/activate
+	ACTIVATE_VENV = if [ -z $${VIRTUAL_ENV} ]; then $(ACTIVATE) && $(SHELL); fi
+endif
 
-install: $(USER_VIRTUAL_ENVIRONMENT)
+activate: | $(VENV)
+	$(ACTIVATE_VENV)
 
-$(USER_VIRTUAL_ENVIRONMENT): requirements.txt
-	if test ! -d $(USER_VIRTUAL_ENVIRONMENT); then \
-		$(PYTHON) -m venv $(USER_VIRTUAL_ENVIRONMENT); \
+install: $(VENV)
+
+$(VENV): requirements.txt
+	if test ! -d $(VENV); then \
+		$(PYTHON) -m venv $(VENV); \
 	fi
-	. $(USER_VIRTUAL_ENVIRONMENT)/bin/activate && $(PIP) install -r requirements.txt
-	touch $(USER_VIRTUAL_ENVIRONMENT)
+	$(ACTIVATE) && $(PIP) install -r requirements.txt
+	touch $(VENV)
 
 .PHONY: install activate
