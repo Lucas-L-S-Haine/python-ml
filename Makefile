@@ -1,3 +1,6 @@
+MAKE_PID := $(shell ps -o ppid= -p $(shell ps -o ppid= -p $$$$))
+SHELL := $(shell ps -o comm= -p $(MAKE_PID))
+
 VENV = $(CURDIR)/.venv
 
 PYTHON = python
