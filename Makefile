@@ -6,7 +6,7 @@ PYTHON = python3
 PIP = $(PYTHON) -m pip
 
 activate: | $(VENV)
-	$(ACTIVATE_VENV)
+	@$(ACTIVATE_VENV)
 
 install: $(VENV)
 
